@@ -3,12 +3,12 @@ name: sql-injection-training
 hosts:
   - name: webserver
     base_box: 
-      image: base-ubuntu-desktop
+      image: ubuntu-focal-x86_64
       man_user: ubuntu
     flavor: m1.medium
   - name: hacker
     base_box: 
-      image: base-ubuntu-desktop
+      image: ubuntu-focal-x86_64
       man_user: ubuntu
     flavor: m1.medium
 
