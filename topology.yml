@@ -1,0 +1,40 @@
+name: sql-injection-training
+
+hosts:
+  - name: webserver
+    base_box: 
+      image: base-ubuntu-desktop
+      man_user: ubuntu
+    flavor: m1.medium
+  - name: hacker
+    base_box: 
+      image: base-ubuntu-desktop
+      man_user: ubuntu
+    flavor: m1.medium
+
+routers:
+  - name: router
+    base_box:
+      image: debian-9-x86_64
+      man_user: debian
+    flavor: standard.small
+
+networks:
+  - name: server-switch
+    cidr: 192.168.20.0/24
+    accessible_by_user: False
+
+net_mappings:
+    - host: webserver
+      network: server-switch
+      ip: 192.168.20.5
+    - host: hacker
+      network: server-switch
+      ip: 192.168.20.6
+
+router_mappings:
+    - router: router
+      network: server-switch
+      ip: 192.168.20.1
+
+groups: []

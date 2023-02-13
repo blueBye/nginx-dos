@@ -1,0 +1,33 @@
+---
+- name: create account
+  user:
+    name: '{{ username }}'
+    groups: 'sudo'
+    append: yes
+    password: '{{ password }}'
+    shell: '/bin/bash'
+    home: '/home/{{ username }}'
+
+- name: install nginx
+  apt:
+    name: nginx
+    state: latest
+
+- name: copy html
+  copy:
+    src: './files/index.html'
+    dst: '/var/www/html/index.html'
+
+- name: reload nginx
+  service:
+    name: nginx
+    state: reloaded
+
+- name: wait for 30 seconds
+  wait_for:
+    timeout: 30
+
+- name: stop nginx
+  service:
+    name: nginx
+    state: stop

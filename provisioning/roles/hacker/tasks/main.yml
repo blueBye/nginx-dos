@@ -1,0 +1,27 @@
+---
+- name: create account
+  user:
+    name: '{{ username }}'
+    groups: 'sudo'
+    append: yes
+    password: '{{ password }}'
+    shell: '/bin/bash'
+    home: '/home/{{ username }}'
+
+- name: install python3
+  apt:
+    name: python3
+    state: present
+
+- name: copy script
+  copy:
+    src: './file/script.py'
+    dst: '/home/{{ username }}/script.py'
+    mode: '755'
+    owner: '{{ username }}'
+    group: 'sudo'
+
+- name: auto start script on start
+  cron:
+    special_time: reboot
+    job: '/home/{{ username }}/script.py'

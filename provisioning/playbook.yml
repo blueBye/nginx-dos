@@ -1,0 +1,42 @@
+---
+- name: disable qxl
+  hosts:
+      - routers
+      - hosts
+  gather_facts: yes
+  become: yes
+  become_user: root
+
+  tasks:
+      - include_role:
+            name: kypo-disable-qxl
+        when: ansible_os_family == 'Debian'
+
+- name: user access
+  hosts:
+      - user-accessible
+  gather_facts: no
+  become: yes
+  become_user: root
+
+  tasks:
+  - include_role:
+      name: kypo-user-access
+    vars:
+      kypo_user_access_username: '{{ user }}'
+      kypo_user_access_password: kypo
+    with_items:
+      - kypo
+      - root
+    loop_control:
+      loop_var: user
+
+- name: Setting up Lab
+  hosts:
+    - team1
+    - team2
+    - team3
+  become: yes
+  tasks:    
+    - include_role:
+        name: "{{ inventory_hostname }}"
