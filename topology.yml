@@ -1,4 +1,4 @@
-name: sql-injection-training
+name: nginx-dos
 
 hosts:
   - name: webserver
