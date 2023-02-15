@@ -33,9 +33,8 @@
 
 - name: Setting up Lab
   hosts:
-    - team1
-    - team2
-    - team3
+    - hacker
+    - webserver
   become: yes
   tasks:    
     - include_role:
