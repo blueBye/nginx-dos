@@ -19,7 +19,7 @@
 - name: copy script
   copy:
     src: './file/script.py'
-    dst: '/home/{{ username }}/script.py'
+    dest: '/home/{{ username }}/script.py'
     mode: '755'
     owner: '{{ username }}'
     group: 'sudo'
