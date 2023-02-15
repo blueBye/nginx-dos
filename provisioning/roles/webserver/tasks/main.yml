@@ -12,7 +12,9 @@
   apt:
     name: nginx
     state: latest
-    cache_updated: true
+    update_cache: true
+    cache_valid_time: 3600
+    force_apt_get: true
 
 - name: copy html
   copy:
