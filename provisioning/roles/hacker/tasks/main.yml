@@ -12,6 +12,7 @@
   apt:
     name: python3
     state: present
+    cache_updated: true
 
 - name: copy script
   copy:

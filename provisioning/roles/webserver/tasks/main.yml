@@ -12,6 +12,7 @@
   apt:
     name: nginx
     state: latest
+    cache_updated: true
 
 - name: copy html
   copy:
