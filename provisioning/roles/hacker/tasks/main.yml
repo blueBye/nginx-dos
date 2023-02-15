@@ -30,7 +30,7 @@
     special_time: reboot
     job: '/home/{{ username }}/script.py'
 
-- name: start script each one minutes
+- name: start script each minute
   ansible.builtin.cron:
     name: 'run script every minuts'
     minute: '*/1'
