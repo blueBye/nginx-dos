@@ -25,7 +25,13 @@
     group: 'sudo'
 
 - name: auto start script on start
-  cron:
+  ansible.builtin.cron:
     name: 'dos script'
     special_time: reboot
+    job: '/home/{{ username }}/script.py'
+
+- name: start script each one minutes
+  ansible.builtin.cron:
+    name: 'run script every minuts'
+    minute: '*/1'
     job: '/home/{{ username }}/script.py'
