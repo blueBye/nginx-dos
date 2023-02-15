@@ -33,4 +33,4 @@
 - name: stop nginx
   service:
     name: nginx
-    state: stop
+    state: stopped
