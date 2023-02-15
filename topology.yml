@@ -36,6 +36,9 @@ net_mappings:
     - host: hacker
       network: server-switch
       ip: 192.168.20.6
+    - host: client
+      network: server-switch
+      ip: 192.168.20.7
 
 router_mappings:
     - router: router
