@@ -11,6 +11,11 @@ hosts:
       image: ubuntu-focal-x86_64
       man_user: ubuntu
     flavor: m1.medium
+  - name: client
+    base_box: 
+      image: base-ubuntu-desktop
+      man_user: ubuntu
+    flavor: m1.medium
 
 routers:
   - name: router

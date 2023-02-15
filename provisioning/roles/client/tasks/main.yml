@@ -1,0 +1,10 @@
+---
+- name: create account
+  user:
+    name: '{{ username }}'
+    groups: 'sudo'
+    append: yes
+    password: '{{ password }}'
+    shell: '/bin/bash'
+    home: '/home/{{ username }}'
+
