@@ -23,6 +23,7 @@ headers = {}
 
 while True:
     headers['User-Agent'] = random.choice(user_agents)
+    headers['How-To-Stop'] = 'Pay8BCstomsnVeCx13XZsiGev9Mb6AaHJLvRmYebYCM'
     req = urllib.request.Request('http://192.168.20.5', headers=headers)
     res = urllib.request.urlopen(req)
     time.sleep(0.1)
