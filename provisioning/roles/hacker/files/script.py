@@ -24,7 +24,6 @@ headers = {}
 while True:
     try:
         headers['User-Agent'] = random.choice(user_agents)
-        headers['Referer'] = 'Pay8BitcoinsTomsnVeCx13XZsiGev9Mb6AaHJLvRmYebYCM'
         req = urllib.request.Request('http://192.168.20.5', headers=headers)
         res = urllib.request.urlopen(req)
         time.sleep(0.1)
