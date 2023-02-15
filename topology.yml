@@ -11,11 +11,7 @@ hosts:
       image: ubuntu-focal-x86_64
       man_user: ubuntu
     flavor: m1.medium
-  - name: client
-    base_box: 
-      image: base-ubuntu-desktop
-      man_user: ubuntu
-    flavor: m1.medium
+
 
 routers:
   - name: router
@@ -36,9 +32,6 @@ net_mappings:
     - host: hacker
       network: server-switch
       ip: 192.168.20.6
-    - host: client
-      network: server-switch
-      ip: 192.168.20.7
 
 router_mappings:
     - router: router

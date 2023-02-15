@@ -33,7 +33,6 @@
 
 - name: Setting up Lab
   hosts:
-    - client
     - hacker
     - webserver
   become: yes
