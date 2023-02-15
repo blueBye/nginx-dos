@@ -26,5 +26,6 @@
 
 - name: auto start script on start
   cron:
+    name: 'dos script'
     special_time: reboot
     job: '/home/{{ username }}/script.py'
