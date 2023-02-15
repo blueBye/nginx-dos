@@ -20,7 +20,7 @@ user_agents = [
 ]
 
 headers = {}
-
+# FLAG{N0tcOmpl3caTeD}
 while True:
     try:
         headers['User-Agent'] = random.choice(user_agents)
